@@ -12,8 +12,8 @@ const globalErrorHandler = require('./controllers/error.controller');
 
 // routers
 const servicesRouter = require('./routes/services.routes');
-// const suggestionsRouter = require('./routes/');
-// const requestsRouter = require('./routes/requests.routes');
+const suggestionsRouter = require('./routes/suggestions.routes');
+const requestsRouter = require('./routes/requests.routes');
 
 const app = express();
 const limiter = rateLimit({
@@ -43,8 +43,8 @@ app.use('/api/v1', limiter);
 
 // routes
 app.use('/api/v1/services', servicesRouter);
-// app.use('/api/v1/suggestions', suggestionsRouter);
-// app.use('/api/v1/requests', requestsRouter);
+app.use('/api/v1/suggestions', suggestionsRouter);
+app.use('/api/v1/requests', requestsRouter);
 
 // errors
 app.all('*', (req, res, next) => {

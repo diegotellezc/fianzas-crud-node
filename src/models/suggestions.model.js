@@ -1,6 +1,5 @@
 const { DataTypes } = require('sequelize');
 const { db } = require('../database/config');
-const bcrypt = require('bcryptjs');
 
 const Suggestions = db.define(
   'suggestions',

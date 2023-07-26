@@ -11,7 +11,7 @@ router
   .route('/')
   .get(servicesController.findServices)
   .post(
-    validationsMiddleware.createServiceValidation,
+    validationsMiddleware.validationToCreate,
     servicesController.createService
   );
 

@@ -13,7 +13,7 @@ const validFields = (req, res, next) => {
   next();
 };
 
-exports.createServiceValidation = [
+exports.validationToCreate = [
   body('name').notEmpty().withMessage('Name cannot be empty.'),
   body('lastname').notEmpty().withMessage('Lastname cannot be empty.'),
   body('email')
@@ -25,6 +25,7 @@ exports.createServiceValidation = [
   body('description').notEmpty().withMessage('Description cannot be empty.'),
   validFields,
 ];
+
 
 
 
